@@ -1,16 +1,28 @@
 
+export const kmPerDeg = 111.19;
 
-    /**
-     c lat1 => Latitude of first point (+N, -S) in degrees
-     c lon1 => Longitude of first point (+E, -W) in degrees
-     c lat2 => Latitude of second point
-     c lon2 => Longitude of second point
-     c
-     c getDelta() => Great Circle Arc distance in degrees
-     c getAz()    => Azimuth from pt. 1 to pt. 2 in degrees
-     c getBaz()   => Back Azimuth from pt. 2 to pt. 1 in degrees
-     */
-export default function distaz(lat1, lon1, lat2, lon2){
+export function degtokm(deg) {
+  return deg * kmPerDeg;
+}
+
+export function kmtodeg(km) {
+  return km / kmPerDeg;
+}
+
+/**
+ c lat1 => Latitude of first point (+N, -S) in degrees
+ c lon1 => Longitude of first point (+E, -W) in degrees
+ c lat2 => Latitude of second point
+ c lon2 => Longitude of second point
+ c
+ c delta           => Great Circle Arc distance in degrees
+ c azimuth         => Azimuth of pt. 1 wrt pt. 2 in degrees
+ c backazimuth     => Azimuth of pt. 2 wrt pt. 1 in degrees
+ *
+ * azimuth is if you stand at point 2 and measure angle between north
+ *   and point 1. I.E. point 1 is the station and point 2 is the event.
+ */
+export function distaz(lat1, lon1, lat2, lon2){
     let result = {
         stalat: lat1,
         stalon: lon1,
@@ -23,6 +35,9 @@ export default function distaz(lat1, lon1, lat2, lon2){
 
     if ((lat1 == lat2)&&(lon1 == lon2)) {
         // don't do calc, just return zero for idential points
+        result.delta = 0;
+        result.az = 0;
+        result.baz = 0;
         return result;
     }
     let scolat, slon, ecolat, elon;
