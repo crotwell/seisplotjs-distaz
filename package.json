@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/crotwell/seisplotjs-distaz",
   "devDependencies": {
-    "ava": "^0.17.0",
+    "ava": "^0.21.0",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
     "babel-preset-env": "^1.6.0",
@@ -39,7 +39,7 @@
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "qunit": "^0.9.3"
+    "qunit": "^1.0.0"
   },
   "ava": {
     "files": [
