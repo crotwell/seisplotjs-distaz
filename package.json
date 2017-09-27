@@ -1,6 +1,6 @@
 {
   "name": "seisplotjs-distaz",
-  "version": "1.0.1-SNAPSHOT",
+  "version": "1.0.1-alpha.1",
   "description": "Javascript library for elliptical earth distance and azimuth calculations.",
   "main": "./lib/distaz.js",
   "scripts": {
