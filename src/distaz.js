@@ -21,9 +21,12 @@ type DistAzOutput = {
  * lat2 => Latitude of second point
  * lon2 => Longitude of second point
  *
- * delta           => Great Circle Arc distance in degrees
- * az              => Azimuth of pt. 1 wrt pt. 2 in degrees
- * baz             => Azimuth of pt. 2 wrt pt. 1 in degrees
+ * Returns a simple object (DistAzOutput) with:
+ ```
+ *     delta       => Great Circle Arc distance in degrees
+ *     az          => Azimuth of pt. 1 wrt pt. 2 in degrees
+ *     baz         => Azimuth of pt. 2 wrt pt. 1 in degrees
+ ```
  *
  * azimuth is if you stand at point 2 and measure angle between north
  *   and point 1. I.E. point 1 is the station and point 2 is the event.
